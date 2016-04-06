@@ -4,17 +4,20 @@
  */
 class Alien extends Carnivore {
     /**
-     * \brief Alien Constructor
+     * Alien Constructor.
      * <p>
-     * \param universe Universe it belong in
+     * @param x coordinate alien spawns
+     * @param y coordinate alien spawns
+     * @param currentAge current age of the alien
+     * @param u Universe it belong in
      * \return Alien
      */
-    public Alien(Universe u, int x, int y, float currentAge) {
+    Alien(final Universe u, final int x, final int y, final float currentAge) {
         super(u, x, y, currentAge);
     }
 
     /**
-     * \brief see Animal::update_logic
+     * {@inheritDoc}
      */
     protected void update_logic() {
         IntPair preyCoordinate = new IntPair(0, 0);
@@ -22,71 +25,80 @@ class Alien extends Carnivore {
         if (!find(preyCoordinate, predatorCoordinate)) {
             move(goRandom());
         } else {
-            move(goTo(preyCoordinate.getFirst(), predatorCoordinate.getSecond()));
+            move(goTo(
+                    preyCoordinate.getFirst(),
+                    predatorCoordinate.getSecond()
+            ));
         }
     }
 
     /**
-     * \brief find the nearest organism from the alien
-     * \param prey_x, prey_y Location of the prey
-     * \param predator_x,predator_y Location of the alien
+     *  find the nearest organism from the alien.
+     * @param preyCoordinate Location of the prey
+     * @param predatorCoordinate Location of the alien
+     * @return true if the prey is found
      */
-    public boolean find(IntPair preyCoordinate, IntPair predatorCoordinate) {
+    public boolean find(final IntPair preyCoordinate,
+                        final IntPair predatorCoordinate) {
         Board board = universe.board;
-        int closest_prey = 1000000000;
-        boolean prey_found = false;
+        final int theImpossible = 1000000000;
+        int closestPrey = theImpossible;
+        boolean preyFound = false;
         preyCoordinate.setFirst(predatorCoordinate.getFirst());
         preyCoordinate.setSecond(predatorCoordinate.getSecond());
 
         for (int x = 0; x < board.GetH(); ++x) {
             for (int y = 0; y < board.GetW(); ++y) {
                 if (board.GetEl(x, y).length() != 0) {
-                    prey_found = true;
+                    preyFound = true;
                     int dx = predatorCoordinate.getFirst() - x;
                     int dy = predatorCoordinate.getSecond() - y;
-                    if (closest_prey > dx * dx + dy * dy) {
-                        closest_prey = dx * dx + dy * dy;
+                    if (closestPrey > dx * dx + dy * dy) {
+                        closestPrey = dx * dx + dy * dy;
                         predatorCoordinate.setFirst(x);
                         predatorCoordinate.setSecond(y);
                     }
                 }
             }
         }
-        return prey_found;
+        return preyFound;
     }
 
     /**
-     * \brief see Organism::ch
+     * {@inheritDoc}
      */
     public char ch() {
         return '@';
     }
 
     /**
-     * \brief see Organism::age
+     * {@inheritDoc}
      */
     public int age() {
-        return 3;
+        final int theAge = 3;
+        return theAge;
     }
 
     /**
-     * \brief see Organism::power
+     * {@inheritDoc}
      */
     public int power() {
-        return 50;
+        final int thePower = 50;
+        return thePower;
     }
 
     /**
-     * \brief see Animal::speed
+     * {@inheritDoc}
      */
     public float speed() {
-        return 50000;
+        final int theSpeed = 50000;
+        return theSpeed;
     }
 
     /**
-     * \brief see Organism::interact
+     * {@inheritDoc}
      */
-    public void interact(Organism O) {
-        O.forceKill();
+    public void interact(final Organism partner) {
+        partner.forceKill();
     }
 }

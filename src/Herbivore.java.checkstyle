@@ -1,0 +1,15 @@
+Starting audit...
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:0: Missing package-info.java file. [JavadocPackage]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:1: Missing a Javadoc comment. [JavadocType]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:2: First sentence should end with a period. [JavadocStyle]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:15: Parameter u should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:24: Expected @param tag for 'u'. [JavadocMethod]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:27: Parameter x should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:31: Expected @param tag for 'x'. [JavadocMethod]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:34: Parameter y should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:38: Expected @param tag for 'y'. [JavadocMethod]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:41: Parameter currentAge should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Herbivore.java:8:47: Expected @param tag for 'currentAge'. [JavadocMethod]
+Audit done.
+Checkstyle ends with 12 errors.

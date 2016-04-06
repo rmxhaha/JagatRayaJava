@@ -1,0 +1,11 @@
+Starting audit...
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:0: Missing package-info.java file. [JavadocPackage]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:1: Missing a Javadoc comment. [JavadocType]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:2:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:2:15: Parameter universe should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:2:34: Parameter x should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:2:41: Parameter y should be final. [FinalParameters]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Carnivore.java:2:48: Parameter currentAge should be final. [FinalParameters]
+Audit done.
+Checkstyle ends with 8 errors.

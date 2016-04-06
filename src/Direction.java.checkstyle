@@ -1,0 +1,15 @@
+Starting audit...
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:0: Missing package-info.java file. [JavadocPackage]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:1: Missing a Javadoc comment. [JavadocType]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:2:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:3:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:4:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:5:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:6:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:7:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:8:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:9:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Direction.java:10:5: Missing a Javadoc comment. [JavadocVariable]
+Audit done.
+Checkstyle ends with 12 errors.
