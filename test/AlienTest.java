@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 
+import Utility.IntPair;
+import Model.Board;
+import Model.Universe;
+import Model.Creature.Alien;
+import Model.Creature.Grass;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -48,18 +53,6 @@ public class AlienTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of update_logic method, of class Alien.
-     */
-    @Test
-    public void testUpdate_logic() {
-        System.out.println("update_logic");
-        Alien instance = new Alien(universe,2,2,0.0f);
-        int sx = instance.getX();
-        int sy = instance.getY();
-        instance.update_logic();
-        assertTrue( sx != instance.getX() || sy != instance.getY());
-    }
 
     /**
      * Test of find method, of class Alien.

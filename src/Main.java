@@ -1,3 +1,8 @@
+import Factory.OrganismFactory;
+import Model.Board;
+import Model.Universe;
+import Model.Creature.Organism;
+
 import java.util.Scanner;
 
 public class Main {
@@ -12,8 +17,8 @@ public class Main {
 			Board b = new Board(w,h);
 			Universe u = new Universe(b,N);
 			OrganismFactory organismFactory = new OrganismFactory(u,0.f);
-			organismFactory.CreateEagle(0,0);
-			organismFactory.CreateHuman(1,1);
+			Organism eagle =  organismFactory.CreateEagle(0,0);
+			Organism human = organismFactory.CreateHuman(1,1);
 			
 			while( true ){
 				try {

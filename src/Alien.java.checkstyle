@@ -1,5 +1,0 @@
-Starting audit...
-[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Alien.java:0: Missing package-info.java file. [JavadocPackage]
-[ERROR] E:\University\Semester 4\OOP\JagatRaya\src\Alien.java:22:20: Name 'update_logic' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
-Audit done.
-Checkstyle ends with 2 errors.
