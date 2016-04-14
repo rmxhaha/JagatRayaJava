@@ -28,14 +28,11 @@ public class Alien extends Carnivore {
     protected void update_logic() {
         IntPair preyCoordinate = new IntPair(0, 0);
         IntPair predatorCoordinate = new IntPair(x, y);
-        if (!find(preyCoordinate, predatorCoordinate)) {
-            move(goRandom());
-        } else {
-            move(goTo(
-                    preyCoordinate.getFirst(),
-                    predatorCoordinate.getSecond()
-            ));
-        }
+        find(preyCoordinate, predatorCoordinate);
+        move(goTo(
+            preyCoordinate.getFirst(),
+            predatorCoordinate.getSecond()
+        ));
     }
 
     /**

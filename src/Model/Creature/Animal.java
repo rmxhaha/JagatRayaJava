@@ -9,9 +9,9 @@ public abstract class Animal extends Organism {
     protected float timebuffer;
 
     /**
-     * \brief Animal Constructor
+     *  Animal Constructor
      * <p>
-     * \param universe Universe it belong in
+     * @param universe Universe it belong in
      * \return Animal
      */
     public Animal(Universe universe, int x, int y, float currentAge) {
@@ -20,13 +20,13 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief speed of animal for moving
+     *  speed of animal for moving
      * \return float
      */
     public abstract float speed();
 
     /**
-     * \brief Time buffer of the animal
+     *  Time buffer of the animal
      * \return float
      */
     public float getTimebuffer() {
@@ -34,8 +34,8 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief do the animal behaviour if reach time.
-     * \param dt delta time for doing the animal behaviour
+     *  do the animal behaviour if reach time.
+     * @param dt delta time for doing the animal behaviour
      */
     public void update(float dt) {
         super.update(dt);
@@ -52,8 +52,8 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief find the direction where animal should move to, if the animal want to run from its predator.
-     * \param x,y Location of the thing animal should avoid
+     *  find the direction where animal should move to, if the animal want to run from its predator.
+     * @param x,y Location of the thing animal should avoid
      * \return Direction
      */
     protected Direction avoid(int tx, int ty) {
@@ -80,8 +80,8 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief find the direction where animal should move to, if the animal want to go to its prey / herd.
-     * \param x,y Location of the thing animal should go to.
+     *  find the direction where animal should move to, if the animal want to go to its prey / herd.
+     * @param x,y Location of the thing animal should go to.
      * \return Direction
      */
     protected Direction goTo(int tx, int ty) {
@@ -107,11 +107,11 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief return random direction.
+     *  return random direction.
      * \return Direction
      */
     protected Direction goRandom() {
-        int d = randomGenerator.nextInt(Integer.SIZE - 1) % 8;
+        int d = randomGenerator.nextInt(8);
         switch (d) {
             case 0:
                 return Direction.UP;
@@ -135,10 +135,10 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief find the nearest target from the Animal
-     * \param prey_ch symbol of the target
-     * \param prey_x, prey_y Location of the prey
-     * \param predator_x,predator_y Location of the Animal
+     *  find the nearest target from the Animal
+     * @param prey_ch symbol of the target
+     * @param prey_x, prey_y Location of the prey
+     * @param predator_x,predator_y Location of the Animal
      */
     protected boolean findPrey(char prey_ch, IntPair preyCoordinate, IntPair predatorCoordinate) {
         Board board = universe.board;
@@ -165,8 +165,8 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief move to the direction
-     * \param direction direction where the animal should move to
+     *  move to the direction
+     * @param direction direction where the animal should move to
      */
     protected void move(Direction direction) {
         int dx = 0, dy = 0;
@@ -233,7 +233,7 @@ public abstract class Animal extends Organism {
     }
 
     /**
-     * \brief behaviour of the animal
+     *  behaviour of the animal
      */
     protected abstract void update_logic();
 
