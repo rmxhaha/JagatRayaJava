@@ -1,0 +1,102 @@
+package Model.Creature;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import Model.*;
+
+/**
+ *
+ * @author Rmx
+ */
+public class Poison_IvyTest{
+	private static Universe universe;
+	
+	public Poison_IvyTest() { }
+	
+	@BeforeClass
+	public static void setUpClass(){
+		int w = 5;
+		int h = 5;
+		int N = 1;
+		
+		try{
+			Board b = new Board(w,h);
+			universe = new Universe(b,N);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	@AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+	 
+	 /**
+     * Test of ch method, of class Poison_Ivy.
+     */
+    @Test
+    public void testCh() {
+        System.out.println("ch");
+        Poison_Ivy instance = new Poison_Ivy(universe,3,3,0.0f);
+        char expResult = 'P';
+        char result = instance.ch();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of age method, of class Poison_Ivy.
+     */
+    @Test
+    public void testAge() {
+        System.out.println("age");
+        Poison_Ivy instance = new Poison_Ivy(universe,3,3,0.0f);
+        int expResult = 30000;
+        int result = instance.age();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of power method, of class Poison_Ivy.
+     */
+    @Test
+    public void testPower() {
+        System.out.println("power");
+        Poison_Ivy instance = new Poison_Ivy(universe,3,3,0.0f);
+        int expResult = 13;
+        int result = instance.power();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of tgrow method, of class Poison_Ivy.
+     */
+    @Test
+    public void testTGrow() {
+        System.out.println("tGrow");
+        Poison_Ivy instance = new Poison_Ivy(universe,3,3,0.0f);
+        float expResult = 0.5f;
+        float result = instance.tgrow();
+        assertEquals(expResult, result, 0.0);
+    }
+   
+}
+
+
