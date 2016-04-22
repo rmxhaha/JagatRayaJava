@@ -1,13 +1,15 @@
 package Model.Creature;
 
-import Utility.IntPair;
+import Model.Organism;
 import Model.Universe;
+import Utility.IntPair;
 
 /**
  * Deer class.
  * Deer can eat plants.
  * Deer can avoid tiger if tiger is near. Deer will look for other deer if tiger is far.
  */
+@Deprecated
 public class Deer extends Herbivore {
     /**
      * \brief Deer Constructor

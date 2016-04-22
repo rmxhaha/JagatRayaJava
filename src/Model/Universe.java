@@ -1,8 +1,8 @@
 package Model;
 
-import Model.Creature.Organism;
 import Model.Creature.Rabbit;
 import Model.Creature.Turtle;
+
 import java.util.Random;
 import java.util.Vector;
 import java.util.stream.Collectors;

@@ -1,16 +1,16 @@
 package Model.Creature;
 
 
-import Utility.IntPair;
+import Model.Organism;
 import Model.Universe;
-import Model.Creature.Carnivore;
+import Utility.IntPair;
 
 /**
  * Tiger class.
  * Tiger will chase deer and horse.
  * Tiger can eat deer and horse.
  */
-
+@Deprecated
 public class Tiger extends Carnivore {
     /**
      * \brief Tiger Constructor

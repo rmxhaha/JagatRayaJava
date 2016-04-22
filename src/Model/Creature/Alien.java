@@ -1,13 +1,15 @@
 package Model.Creature;
 
-import Utility.IntPair;
 import Model.Board;
+import Model.Organism;
 import Model.Universe;
+import Utility.IntPair;
 
 /**
  * Alien class.
  * Alien will kill everything in it's way. Alien have the highest speed.
  */
+@Deprecated
 public class Alien extends Carnivore {
     /**
      * Alien Constructor.

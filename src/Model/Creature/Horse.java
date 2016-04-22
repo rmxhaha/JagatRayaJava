@@ -1,12 +1,14 @@
 package Model.Creature;
 
-import Utility.IntPair;
+import Model.Organism;
 import Model.Universe;
+import Utility.IntPair;
 
 /**
  * Horse class.
  * Horse can eat plants.
  */
+@Deprecated
 public class Horse extends Herbivore{
     /** \brief Horse Constructor
      *

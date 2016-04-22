@@ -1,14 +1,15 @@
 package Model.Creature;
 
 
+import Model.Organism;
+import Model.Plant;
 import Model.Universe;
-import Model.Creature.Plant;
 
 /**
  * Grass class.
  * Grass can grow or make a new grass object around this object.
  */
-
+@Deprecated
 public class Grass extends Plant {
     /** \brief Grass Constructor
      *

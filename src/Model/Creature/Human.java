@@ -1,9 +1,10 @@
 package Model.Creature;
 
 
+import Model.Organism;
 import Model.Universe;
-import Model.Creature.Carnivore;
 
+@Deprecated
 public class Human extends Carnivore {
     private static int maxOffspring = 2;
 

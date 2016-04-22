@@ -1,12 +1,11 @@
 package Model.Creature;
 
 
-import Model.Universe;
-import Model.Creature.Rabbit;
-import Model.Creature.Turtle;
-import Model.Creature.Carnivore;
 import Model.Direction;
+import Model.Organism;
+import Model.Universe;
 
+@Deprecated
 public class Eagle extends Carnivore {
     /**
      * \brief Eagle Constructor
