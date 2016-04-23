@@ -1,7 +1,9 @@
 package Model.Creature;
 
+import Model.Animal;
 import Model.Universe;
 
+@Deprecated
 public abstract class Herbivore extends Animal {
     /**
      * \brief Herbivore Constructor

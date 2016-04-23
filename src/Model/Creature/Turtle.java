@@ -1,8 +1,10 @@
 package Model.Creature;
 
-import Model.Universe;
+import Model.Organism;
 import Model.Race;
+import Model.Universe;
 
+@Deprecated
 public class Turtle extends Herbivore {
 	private Race race;
 	

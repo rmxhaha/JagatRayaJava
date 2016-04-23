@@ -1,14 +1,14 @@
 package Model;
 
 public class Board {
-    private static final int defaultsize = 10;
+    private static final int defaultSize = 10;
     private StringBuffer[][] data;
     private int w;
     private int h;
 
     public Board() {
-        w = defaultsize;
-        h = defaultsize;
+        w = defaultSize;
+        h = defaultSize;
         data = new StringBuffer[h][w];
         for( int y = 0; y < h; ++ y ){
             for( int x = 0; x < w; ++ x ){

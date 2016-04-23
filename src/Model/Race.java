@@ -1,8 +1,6 @@
 package Model;
 
-
-import Model.Creature.Organism;
-
+@Deprecated
 public class Race {
     private int startX, startY, endX, endY;
     private Organism rabbit;

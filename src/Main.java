@@ -1,7 +1,7 @@
 import Factory.OrganismFactory;
 import Model.Board;
+import Model.Organism;
 import Model.Universe;
-import Model.Creature.Organism;
 
 import java.util.Scanner;
 

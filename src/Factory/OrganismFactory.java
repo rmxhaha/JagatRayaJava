@@ -1,7 +1,9 @@
 package Factory;
 
-import Model.Universe;
 import Model.Creature.*;
+import Model.Organism;
+import Model.Universe;
+
 import java.util.Random;
 
 public class OrganismFactory {

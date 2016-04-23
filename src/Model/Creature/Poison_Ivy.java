@@ -1,7 +1,10 @@
 package Model.Creature;
 
 
+import Model.Organism;
+import Model.Plant;
 import Model.Universe;
+
 import java.util.Random;
 
 /**
@@ -9,7 +12,7 @@ import java.util.Random;
  * Poison_Ivy can grow or make a new Poison_Ivy object around this object.
  * Any object with herbivore class can die if eat Poison_Ivy class
  */
-
+@Deprecated
 public class Poison_Ivy extends Plant {
     /** \brief Poison_Ivy Constructor
      *
