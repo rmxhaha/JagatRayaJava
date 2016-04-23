@@ -3,18 +3,16 @@ package Model.BulletType;
 import Model.Bullet;
 import Model.Organism;
 import Model.Universe;
-import Utility.IntPair;
 
 /**
  * Created by anthony on 4/22/16.
  * Updated by candra on 4/23/16.
  */
 public class StraightBullet extends Bullet {
-    private float movementAngle; // in radian
-    private float movementSpeed;
+    private final float movementAngle; // in radian
+    private final float movementSpeed;
     /**
      * Bullet Constructor
-     * <p/>
      *
      * @param universe   Universe it belong in
      *                   \return Animal
@@ -22,6 +20,7 @@ public class StraightBullet extends Bullet {
      * @param y          y location
      * @param currentAge current age
      * @param movementAngle bullet angle movement direction (in radian)
+     * @param movementSpeed movement speed of the bullet
      */
     public StraightBullet(Universe universe, int x, int y, float currentAge, float movementAngle, float movementSpeed) {
         super(universe, x, y, currentAge);
