@@ -3,7 +3,7 @@ package Model;
 import java.util.Random;
 
 public abstract class Organism {
-	protected static Random randomGenerator = new Random();
+    protected static Random randomGenerator = new Random();
 
     protected float currentAge; // current age
     protected boolean is_dead = false;
@@ -25,6 +25,8 @@ public abstract class Organism {
         this.currentAge = currentAge;
         this.y = y;
         this.universe = universe;
+        
+        universe.board.SetEl(ch(), y, y);
     }
 
     /**
