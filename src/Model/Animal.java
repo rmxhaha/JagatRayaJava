@@ -22,13 +22,13 @@ public abstract class Animal extends Organism {
 
     /**
      *  speed of animal for moving
-     * \return float
+     * @return float
      */
     public abstract float speed();
 
     /**
      *  Time buffer of the animal
-     * \return float
+     * @return float
      */
     public float getTimeBuffer() {
         return timeBuffer;
