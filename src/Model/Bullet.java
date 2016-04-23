@@ -19,21 +19,20 @@ public abstract class Bullet extends Animal {
      */
     public Bullet(Universe universe, int x, int y, float currentAge) {
         super(universe, x, y, currentAge);
-		setNextLocation();
     }
 	
-	/**
-	 * setNextLocation
-	 * set the next location where the bullet will go
-	 *
-	 */
-	protected abstract void setNextLocation();
+    /**
+     * setNextLocation
+     * set the next location where the bullet will go
+     *
+     */
+    protected void setNextLocation(){}
 	
     @Override
     protected void update_logic() {
-		if( targetX == x && targetY == y )
-			setNextLocation();
+        if( targetX == x && targetY == y )
+            setNextLocation();
 
-		move(goTo(targetX,targetY));
+        move(goTo(targetX,targetY));
     }
 }
