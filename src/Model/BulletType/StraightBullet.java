@@ -26,13 +26,17 @@ public class StraightBullet extends Bullet {
         super(universe, x, y, currentAge);
         this.movementAngle = movementAngle;
         this.movementSpeed = movementSpeed;
+        setNextLocation();
+
     }
 
     
     @Override
-    protected void setNextLocation(){
+    protected final void setNextLocation(){
         targetX = x + new Double(8*Math.sin(movementAngle)).intValue();
         targetY = y + new Double(8*Math.cos(movementAngle)).intValue();
+        System.out.println("nl" + targetX + " " + targetY );
+
     }
 
     @Override
@@ -43,17 +47,17 @@ public class StraightBullet extends Bullet {
 
     @Override
     public char ch() {
-        return 0;
+        return 'B';
     }
 
     @Override
     public int age() {
-        return 0;
+        return 10000;
     }
 
     @Override
     public int power() {
-        return 0;
+        return 100;
     }
 
     @Override
