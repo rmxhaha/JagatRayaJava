@@ -4,7 +4,10 @@ package Model;
  * Created by anthony on 4/22/16.
  */
 public abstract class Bullet extends Animal {
-    /**
+    protected Integer targetX;
+    protected Integer targetY;
+
+	/**
      * Bullet Constructor
      * <p/>
      *
@@ -16,5 +19,21 @@ public abstract class Bullet extends Animal {
      */
     public Bullet(Universe universe, int x, int y, float currentAge) {
         super(universe, x, y, currentAge);
+		setNextLocation();
+    }
+	
+	/**
+	 * setNextLocation
+	 * set the next location where the bullet will go
+	 *
+	 */
+	protected abstract void setNextLocation();
+	
+    @Override
+    protected void update_logic() {
+		if( targetX == x && targetY == y )
+			setNextLocation();
+
+		move(goTo(targetX,targetY));
     }
 }
