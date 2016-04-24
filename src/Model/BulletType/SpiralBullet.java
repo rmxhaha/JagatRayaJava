@@ -11,7 +11,7 @@ import Model.Universe;
 public class SpiralBullet extends Bullet {
     private float movementAngle; // in radian
     private final float movementSpeed;
-    private final float movementAngleSpeed;
+    private final float movementAngleSpeed; // in rad / s
     /**
      * SpiralBullet Constructor
      *
@@ -35,15 +35,16 @@ public class SpiralBullet extends Bullet {
 
     @Override
     protected void update_logic() {
-        super.update_logic();
-        float dt = 1000 / speed();
+        float dt = 1 / speed();
         movementAngle += dt * movementAngleSpeed;
+        super.update_logic();
     }
     
     @Override
     protected final void setNextLocation(){
         targetX = x + new Double(8*Math.sin(movementAngle)).intValue();
         targetY = y + new Double(8*Math.cos(movementAngle)).intValue();
+        System.out.println("nl" + targetX + " " + targetY );
     }
 
     @Override
@@ -59,7 +60,7 @@ public class SpiralBullet extends Bullet {
 
     @Override
     public int age() {
-        return 0;
+        return 10000;
     }
 
     @Override

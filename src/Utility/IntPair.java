@@ -23,4 +23,8 @@ public class IntPair {
     public void setSecond(int second) {
         this.second = second;
     }
+    
+    public String toString(){
+        return first + " " + second;
+    }
 }

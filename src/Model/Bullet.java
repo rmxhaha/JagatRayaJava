@@ -32,7 +32,6 @@ public abstract class Bullet extends Animal {
     protected void update_logic() {
         if( targetX == x && targetY == y )
             setNextLocation();
-
         move(goTo(targetX,targetY));
     }
 }

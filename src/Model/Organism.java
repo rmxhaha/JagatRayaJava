@@ -25,8 +25,6 @@ public abstract class Organism {
         this.currentAge = currentAge;
         this.y = y;
         this.universe = universe;
-        
-        universe.board.SetEl(ch(), y, y);
     }
 
     /**
@@ -117,7 +115,6 @@ public abstract class Organism {
      */
     public void forceKill() {
         is_dead = true;
-        universe.board.DelEl(ch(), x, y);
     }
 
 }

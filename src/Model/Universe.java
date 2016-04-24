@@ -1,29 +1,54 @@
 package Model;
 
-import Model.Creature.Rabbit;
-import Model.Creature.Turtle;
+
+import Model.BulletType.*;
+import Model.Player;
+import Model.Boss;
+
+import Utility.IntPair;
 
 import java.util.Random;
 import java.util.Vector;
 import java.util.stream.Collectors;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+import java.awt.Color;
 
-public class Universe {
-    public Board board; // expose ?
-
+public class Universe extends JPanel {
     private Vector<Organism> mList;
     private Vector<Race> rList;
     private int maxOrganismPerCell;
-
+    private AssetLoader assetLoader;
+    int gwidth, gheight;
+    
+    public int getWidth(){
+        return gwidth;
+    }
+    public int getHeight(){
+        return gheight;
+    }
+    
     /**
+    private int getWidth(){
+        return width;
+    }
      * \brief Universe Constructor
      * \param board board of the Universe simulation
      * \param m maximum number of Organism per cell
      */
-    public Universe(Board board, int m) throws Exception {
-        this.board = board;
+    public Universe(int width, int height, int m) throws Exception {
+		assetLoader = new AssetLoader();
         maxOrganismPerCell = m;
         mList = new Vector<>();
         rList = new Vector<>();
+        
+        gwidth = width;
+        gheight = height;
+        
         if (maxOrganismPerCell < 1) throw new Exception("MaxOrganismPerCell must be more than 0");
     }
 
@@ -69,9 +94,27 @@ public class Universe {
                 .filter(Organism::isAlive)
                 .forEach(it -> it.update(dt));
 
-        rList.stream()
-                .filter(it -> it.getState() != Race.State.RACE_END)
-                .forEach(Race::updateRace);
+    }
+	
+	
+	@Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.white);
+        for( Organism it : mList ){
+                int x = it.getX();
+                int y = it.getY();
+
+                if( it instanceof Boss )
+                        g.drawImage(assetLoader.getBossImage(), x, y,85,127,null);
+                else if( it instanceof Player )
+                        g.drawImage(assetLoader.getPlayerImage(), x, y,65,125,null);
+                else if( it instanceof SpiralBullet )
+                        g.drawImage(assetLoader.getBulletImage(0), x, y, null );
+                else if( it instanceof StraightBullet )
+                        g.drawImage(assetLoader.getBulletImage(1), x, y, null );
+
+        }
     }
 
     /**
@@ -100,31 +143,27 @@ public class Universe {
         }
     }
 
-    /**
-     * \brief notify all Rabbit and Turtle when a race is announced
-     * <p>
-     * \param sx starting coordinate
-     * \param sy starting coordinate
-     * \param ex finish coordinate
-     * \param ey finish coordinate
-     * \return void
-     */
-    public void addRace() {
-        Random rng = new Random();
-        int sx = rng.nextInt(Integer.SIZE - 1) % board.GetH();
-        int sy = rng.nextInt(Integer.SIZE - 1) % board.GetW();
-        int ex = rng.nextInt(Integer.SIZE - 1) % board.GetH();
-        Race Ra = new Race(sx, sy, ex, sy);
-        rList.add(Ra);
-        for (Organism it : mList) {
-            if (it instanceof Rabbit) {
-                Rabbit r = (Rabbit) it;
-                r.triggerRace(Ra);
-            } else if (it instanceof Turtle) {
-                Turtle t = (Turtle) it;
-                t.triggerRace(Ra);
-            }
-        }
-    }
+	
+	public IntPair findNearest(int cx, int cy, Model.FilterFunction f){
+		int nx = -1;
+		int ny = -1;
+		int nscore = 1000000000;
+		
+		for( Organism it : mList ){
+			if( f.call(it) ){
+				int dx = cx - it.getX();
+				int dy = cy - it.getY();
+
+				int dscore = dx*dx + dy*dy;
+				if( dscore < nscore ){
+					nx = it.getX();
+					ny = it.getY();
+					nscore = dscore;
+				}
+			}
+		}
+		
+		return new IntPair(nx,ny);
+	}
 
 }

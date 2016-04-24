@@ -35,8 +35,6 @@ public class StraightBullet extends Bullet {
     protected final void setNextLocation(){
         targetX = x + new Double(8*Math.sin(movementAngle)).intValue();
         targetY = y + new Double(8*Math.cos(movementAngle)).intValue();
-        System.out.println("nl" + targetX + " " + targetY );
-
     }
 
     @Override

@@ -142,14 +142,15 @@ public abstract class Animal extends Organism {
      * @param predatorCoordinate Location of the Animal
      */
     protected boolean findPrey(char prey_ch, IntPair preyCoordinate, IntPair predatorCoordinate) {
-        Board board = universe.board;
+        return true;
+        /*
         int closest_prey = 1000000000;
         boolean prey_found = false;
         preyCoordinate.setFirst(predatorCoordinate.getFirst());
         preyCoordinate.setSecond(predatorCoordinate.getSecond());
 
-        for (int x = 0; x < board.GetH(); ++x) {
-            for (int y = 0; y < board.GetW(); ++y) {
+        for (int x = 0; x < getHeight(); ++x) {
+            for (int y = 0; y < getWidth(); ++y) {
                 if (board.GetEl(x, y).indexOf(prey_ch + "") != -1) {
                     prey_found = true;
                     int dx = predatorCoordinate.getFirst() - x;
@@ -162,7 +163,7 @@ public abstract class Animal extends Organism {
                 }
             }
         }
-        return prey_found;
+        return prey_found;*/
     }
 
     /**
@@ -210,13 +211,13 @@ public abstract class Animal extends Organism {
         int tx = x + dx;
         int ty = y + dy;
 
-        if (tx >= universe.board.GetW())
-            tx = universe.board.GetW() - 1;
+        if (tx >= universe.getWidth())
+            tx = universe.getWidth() - 1;
         else if (tx < 0)
             tx = 0;
 
-        if (ty >= universe.board.GetH())
-            ty = universe.board.GetH() - 1;
+        if (ty >= universe.getHeight())
+            ty = universe.getHeight() - 1;
         else if (ty < 0)
             ty = 0;
 
@@ -226,8 +227,6 @@ public abstract class Animal extends Organism {
 
         if (x == tx && y == ty) return;
 
-        universe.board.DelEl(ch(), y, x);
-        universe.board.SetEl(ch(), ty, tx);
         x = tx;
         y = ty;
         universe.notifyMovement(this);
