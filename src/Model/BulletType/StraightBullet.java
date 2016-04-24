@@ -27,7 +27,7 @@ public class StraightBullet extends Bullet {
         this.movementAngle = movementAngle;
         this.movementSpeed = movementSpeed;
         setNextLocation();
-
+        System.out.println(this.movementAngle + " " + this.movementSpeed );
     }
 
     

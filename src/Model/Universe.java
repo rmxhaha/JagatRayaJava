@@ -93,28 +93,34 @@ public class Universe extends JPanel {
         mList.stream()
                 .filter(Organism::isAlive)
                 .forEach(it -> it.update(dt));
+        
+        repaint();
 
     }
 	
 	
-	@Override
+    @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        
         g.setColor(Color.white);
         for( Organism it : mList ){
-                int x = it.getX();
-                int y = it.getY();
+            int x = it.getX();
+            int y = it.getY();
 
-                if( it instanceof Boss )
-                        g.drawImage(assetLoader.getBossImage(), x, y,85,127,null);
-                else if( it instanceof Player )
-                        g.drawImage(assetLoader.getPlayerImage(), x, y,65,125,null);
-                else if( it instanceof SpiralBullet )
-                        g.drawImage(assetLoader.getBulletImage(0), x, y, null );
-                else if( it instanceof StraightBullet )
-                        g.drawImage(assetLoader.getBulletImage(1), x, y, null );
+            if( it.isDead() ) continue;
+
+            if( it instanceof Boss )
+                g.drawImage(assetLoader.getBossImage(), x, y,85,127,null);
+            else if( it instanceof Player )
+                g.drawImage(assetLoader.getPlayerImage(), x, y,65,125,null);
+            else if( it instanceof SpiralBullet )
+                g.drawImage(assetLoader.getBulletImage(0), x, y, null );
+            else if( it instanceof StraightBullet )
+                g.drawImage(assetLoader.getBulletImage(1), x, y, null );
 
         }
+        
     }
 
     /**
