@@ -27,14 +27,13 @@ public class StraightBullet extends Bullet {
         this.movementAngle = movementAngle;
         this.movementSpeed = movementSpeed;
         setNextLocation();
-        System.out.println(this.movementAngle + " " + this.movementSpeed );
     }
 
     
     @Override
     protected final void setNextLocation(){
-        targetX = x + new Double(8*Math.sin(movementAngle)).intValue();
-        targetY = y + new Double(8*Math.cos(movementAngle)).intValue();
+        targetX = x + new Double(100*Math.sin(movementAngle)).intValue();
+        targetY = y + new Double(100*Math.cos(movementAngle)).intValue();
     }
 
     @Override
@@ -56,6 +55,10 @@ public class StraightBullet extends Bullet {
     @Override
     public int power() {
         return 100;
+    }
+    
+    public float angle(){
+        return movementAngle;
     }
 
     @Override

@@ -33,6 +33,5 @@ public abstract class Bullet extends Animal {
         if( targetX == x && targetY == y )
             setNextLocation();
         move(goTo(targetX,targetY));
-        System.out.println("updateLogic");
     }
 }

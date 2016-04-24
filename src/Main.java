@@ -1,5 +1,6 @@
 import Model.ImagePanel;
 import Model.Board;
+import Model.Pattern;
 import Model.Organism;
 import Model.Universe;
 import Model.BulletType.*;
@@ -21,7 +22,7 @@ public class Main {
             int w,h,N;
             w = 200;
             h = 300;
-            N = 3;
+            N = 100;
 
             try {
                 Universe u = new Universe(w,h,N);
@@ -30,16 +31,7 @@ public class Main {
                 frame.setVisible(true);
 
 //                        Organism m = new StraightBullet(u,10,10,0,2,2);
-                Organism m3 = new StraightBullet(u,100,150,0.f,1.f,10.f);
-                Organism m4 = new StraightBullet(u,100,150,0.f,2.f,10.f);
-                Organism m5 = new StraightBullet(u,100,150,0.f,3.f,10.f);
-                Organism m6 = new StraightBullet(u,100,150,0.f,0.f,10.f);
-
-//                       u.add(m);
-                u.add(m3);
-                u.add(m4);
-                u.add(m5);
-                u.add(m6);
+                Pattern pattern = new Pattern(u,100,150,30,10);
 
                 while( true ){
                     try {
@@ -52,6 +44,7 @@ public class Main {
 //                   System.out.println(u.findNearest(0,0,f));
 
                     u.update(10);
+                    pattern.update(10);
                 }
             }
             catch(Exception e){
